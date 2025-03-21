@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flight.css') }}">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<img src="{{ url_for('static', filename='images/flight.jpg') }}" alt="Flight Background" class="bg-img">
+
+<body>
+
+    <div class="container">
+        <h1>Flight Price Prediction</h1>
+   <!-- Flight Form -->
+   <form id="flightForm">
+    <label for="departure">Departure City:</label>
+    <select id="departure" name="departure" required>
+        <option value="">Select Departure City</option>
+        <option value="Chennai">Chennai (Chennai International Airport)</option>
+        <option value="Bangalore">Bangalore (Kempegowda International Airport)</option>
+        <option value="Kochi">Kochi (Cochin International Airport)</option>
+        <option value="Mumbai">Mumbai (Chhatrapati Shivaji Maharaj International Airport)</option>
+        <option value="Delhi">Delhi (Indira Gandhi International Airport)</option>
+        <option value="Kolkata">Kolkata (Netaji Subhas Chandra Bose International Airport)</option>
+        <option value="Hyderabad">Hyderabad (Rajiv Gandhi International Airport)</option>
+        <option value="Ahmedabad">Ahmedabad (Sardar Vallabhbhai Patel International Airport)</option>
+        <option value="Pune">Pune (Pune International Airport)</option>
+        <option value="Jaipur">Jaipur (Jaipur International Airport)</option>
+        <option value="Goa">Goa (Goa International Airport)</option>
+        <option value="Chandigarh">Chandigarh (Chandigarh International Airport)</option>
+        <option value="Lucknow">Lucknow (Chaudhary Charan Singh International Airport)</option>
+        <option value="Nagpur">Nagpur (Dr. Babasaheb Ambedkar International Airport)</option>
+        <option value="Indore">Indore (Devi Ahilya Bai Holkar Airport)</option>
+    </select>
+    
+    <label for="destination">Destination City:</label>
+    <select id="destination" name="destination" required>
+        <option value="">Select Destination City</option>
+        <option value="Chennai">Chennai (Chennai International Airport)</option>
+        <option value="Bangalore">Bangalore (Kempegowda International Airport)</option>
+        <option value="Kochi">Kochi (Cochin International Airport)</option>
+        <option value="Mumbai">Mumbai (Chhatrapati Shivaji Maharaj International Airport)</option>
+        <option value="Delhi">Delhi (Indira Gandhi International Airport)</option>
+        <option value="Kolkata">Kolkata (Netaji Subhas Chandra Bose International Airport)</option>
+        <option value="Hyderabad">Hyderabad (Rajiv Gandhi International Airport)</option>
+        <option value="Ahmedabad">Ahmedabad (Sardar Vallabhbhai Patel International Airport)</option>
+        <option value="Pune">Pune (Pune International Airport)</option>
+        <option value="Jaipur">Jaipur (Jaipur International Airport)</option>
+        <option value="Goa">Goa (Goa International Airport)</option>
+        <option value="Chandigarh">Chandigarh (Chandigarh International Airport)</option>
+        <option value="Lucknow">Lucknow (Chaudhary Charan Singh International Airport)</option>
+        <option value="Nagpur">Nagpur (Dr. Babasaheb Ambedkar International Airport)</option>
+        <option value="Indore">Indore (Devi Ahilya Bai Holkar Airport)</option>
+    </select>
+
+    <label for="airline">Select Airline:</label>
+    <select id="airline" name="airline" required>
+        <option value="">Select Airline</option>
+        <option value="IndiGo">IndiGo</option>
+        <option value="Air India">Air India</option>
+        <option value="Air Alliance">Air Alliance</option>
+        <option value="SpiceJet">SpiceJet</option>
+        <option value="GoAir">GoAir</option>
+        <option value="Vistara">Vistara</option>
+        <option value="AirAsia">AirAsia</option>
+        <option value="British Airways">British Airways</option>
+        <option value="Emirates">Emirates</option>
+        <option value="Qatar Airways">Qatar Airways</option>
+        
+    </select>
+    <label for="flightClass">Select Flight Class:</label>
+<select id="flightClass" name="flightClass" required>
+    <option value=""> Flight class</option>
+    <option value="First Class">First Class</option>
+    <option value="Business Class">second Class</option>
+    <option value="Second Class">economy Class</option>
+</select>
+
+    
+
+    
+    <label for="departureDate">Departure Date:</label>
+    <input type="date" id="departureDate" name="departureDate" required>
+
+
+
+    <button type="submit">predict</button>
+   
+
+</form>
+
+
+<div id="predictionResult" class="hidden">
+    <h2>Predicted Flight Price: <span id="predict"></span></h2>
+    
+</div>
+</div>
+<div id="flight-path" class="flight-path"></div>
+
+</div>
+</div>
+
+<script src="{{ url_for('static', filename='js/flight.js') }}"></script>
+</body>
+</html>
